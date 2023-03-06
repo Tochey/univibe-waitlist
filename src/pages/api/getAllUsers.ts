@@ -14,7 +14,10 @@ export default async function getAll(
       'mongodb+srv://admin:admin@uv-waitlist.nzdhukp.mongodb.net/uv-waitlist?retryWrites=true&w=majority'
     );
     const userCount = await getUserModel().find({}).count();
-    res.setHeader('Access-Control-Allow-Origin', 'https://joinunivibe.com');
+    res.setHeader(
+      'Access-Control-Allow-Origin',
+      'https://www.joinunivibe.com/'
+    );
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     return res.send({ count: userCount });
