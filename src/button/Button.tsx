@@ -15,7 +15,7 @@ const Button = (props: IButtonProps) => {
   });
 
   return (
-    <div className={btnClass} onClick={props.handleClick}>
+    <div className={`${btnClass} my-5`} onClick={props.handleClick}>
       <p className="cursor-pointer"> {props.children}</p>
 
       <style jsx>
