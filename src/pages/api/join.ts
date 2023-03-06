@@ -8,12 +8,12 @@ export default async function addToWaitList(
   res: NextApiResponse
 ) {
   try {
-    mongoose.connect(
+    await mongoose.connect(
       'mongodb+srv://admin:admin@uv-waitlist.nzdhukp.mongodb.net/uv-waitlist?retryWrites=true&w=majority'
     );
     const user = await getUserModel().create({ email: req.body.email });
     return res.json({ user });
   } catch (err: any) {
-    return res.status(500).json({ error: err.message });
+    return res.json({ error: err.message });
   }
 }
