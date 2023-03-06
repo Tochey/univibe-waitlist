@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { Section } from '../layout/Section';
-import api from '../pages/lib/api';
+import api from '../lib/api';
 
 const VerticalFeatures = () => {
   const [count, setCount] = useState();

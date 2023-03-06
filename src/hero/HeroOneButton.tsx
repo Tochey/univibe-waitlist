@@ -1,7 +1,7 @@
 import { ReactNode, useState } from 'react';
 
 import { Button } from '../button/Button';
-import api from '../pages/lib/api';
+import api from '../lib/api';
 
 type IHeroOneButtonProps = {
   title: ReactNode;
