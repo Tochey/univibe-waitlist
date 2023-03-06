@@ -20,9 +20,7 @@
     "next-seo": "^4.29.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "styled-jsx-plugin-postcss": "^4.0.1"
-  },
-  "devDependencies": {
+    "styled-jsx-plugin-postcss": "^4.0.1",
     "@next/bundle-analyzer": "^12.0.9",
     "@types/node": "^17.0.13",
     "@types/react": "^17.0.38",
@@ -51,5 +49,6 @@
     "tailwindcss": "^3.0.17",
     "typescript": "^4.5.5"
   },
+  "devDependencies": {},
   "license": "ISC"
 }
