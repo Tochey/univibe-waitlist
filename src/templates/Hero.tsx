@@ -11,11 +11,6 @@ const Hero = () => (
     <Section yPadding="py-6">
       <NavbarTwoColumns logo={<Logo xl />}>
         <li>
-          <Link href="https://www.linkedin.com/in/tochidon/">
-            <a>Creator</a>
-          </Link>
-        </li>
-        <li>
           <Link href="mailto:tochey@outlook.com">
             <a>Contact</a>
           </Link>
