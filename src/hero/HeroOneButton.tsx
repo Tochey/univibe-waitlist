@@ -42,10 +42,11 @@ const HeroOneButton = (props: IHeroOneButtonProps) => {
         {props.title}
       </h1>
       <div className="text-2xl mt-4 mb-16">{props.description}</div>
-      <div className="text-black font-bold mb-1">
+      <div className="text-black font-bold ">
         <p>
-          Join Tochi, Joseph and <span className="font-extrabold">{count}</span>{' '}
-          others on the waitlist
+          Join Tochi Amanze, Joseph Severe and{' '}
+          <span className="font-extrabold">{count - 2}</span> others on the
+          waitlist
         </p>
       </div>
       <input

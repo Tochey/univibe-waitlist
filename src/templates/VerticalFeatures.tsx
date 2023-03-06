@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { VerticalFeatureRow } from '../feature/VerticalFeatureRow';
 import { Section } from '../layout/Section';
 import api from '../lib/api';
 
@@ -24,28 +25,22 @@ const VerticalFeatures = () => {
   }, []);
   return (
     <Section
-      title={`🔥${count! + 2} students are waiting🔥`}
-      description="Salem State Students gain early access to univibe, where you can make new friends and stay up to date with campus life and culture"
+      title={`🔥${count} students are waiting🔥`}
+      description="Our mission is to connect Salem State students in a safe and inclusive space, where they can build meaningful relationships and explore new opportunities"
     >
-      {/* <VerticalFeatureRow
-    title="Your title here"
-    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim."
-    image="/assets/images/feature.svg"
-    imageAlt="First feature alt text"
-  /> */}
-      {/* <VerticalFeatureRow
-    title="Your title here"
-    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim."
-    image="/assets/images/feature2.svg"
-    imageAlt="Second feature alt text"
-    reverse
-  />
-  <VerticalFeatureRow
-    title="Your title here"
-    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim."
-    image="/assets/images/feature3.svg"
-    imageAlt="Third feature alt text"
-  /> */}
+      <VerticalFeatureRow
+        title="Expand Your Social Circle"
+        description="Make friends with students On and Off Campus. With Univibe, you can connect with other students who share your interests, passions, and hobbies."
+        image="/assets/images/feature.svg"
+        imageAlt="First feature alt text"
+      />
+      <VerticalFeatureRow
+        title="Discover new opportunities"
+        description="Univibe helps you discover new clubs, events, and activities happening on campus, so you never miss out on the fun."
+        image="/assets/images/feature2.svg"
+        imageAlt="Second feature alt text"
+        reverse
+      />
     </Section>
   );
 };
