@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Section } from '../layout/Section';
 import api from '../lib/api';
@@ -6,9 +6,22 @@ import api from '../lib/api';
 const VerticalFeatures = () => {
   const [count, setCount] = useState();
 
-  api.get('/api/getAllUsers').then((e) => {
-    setCount(e.data?.count);
-  });
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await api.get('/api/getAllUsers');
+        setCount(response.data?.count);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
+
+    // Return a cleanup function that will be executed when the component unmounts
+    return () => {
+      // Perform any cleanup here
+    };
+  }, []);
   return (
     <Section
       title={`🔥${count! + 2} students are waiting🔥`}

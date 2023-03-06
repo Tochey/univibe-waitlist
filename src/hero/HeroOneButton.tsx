@@ -1,4 +1,4 @@
-import { ReactNode, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 import { Button } from '../button/Button';
 import api from '../lib/api';
@@ -11,7 +11,7 @@ type IHeroOneButtonProps = {
 const HeroOneButton = (props: IHeroOneButtonProps) => {
   const [data, setData] = useState({ email: '' });
   const [message, setMessage] = useState('');
-  const [count, setCount] = useState();
+  const [count, setCount] = useState(0);
   const handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void = ({
     currentTarget: input,
   }) => {
@@ -19,9 +19,22 @@ const HeroOneButton = (props: IHeroOneButtonProps) => {
     setData({ ...data, [input.name]: input.value });
   };
 
-  api.get('/api/getAllUsers').then((e) => {
-    setCount(e.data?.count);
-  });
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await api.get('/api/getAllUsers');
+        setCount(response.data?.count);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
+
+    // Return a cleanup function that will be executed when the component unmounts
+    return () => {
+      // Perform any cleanup here
+    };
+  }, []);
 
   return (
     <header className="text-center">

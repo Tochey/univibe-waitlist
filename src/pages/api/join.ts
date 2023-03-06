@@ -12,8 +12,8 @@ export default async function addToWaitList(
       'mongodb+srv://admin:admin@uv-waitlist.nzdhukp.mongodb.net/uv-waitlist?retryWrites=true&w=majority'
     );
     const user = await getUserModel().create({ email: req.body.email });
-    return res.json({ user });
+    return res.send({ user });
   } catch (err: any) {
-    return res.json({ error: err.message });
+    return res.send({ error: err.message });
   }
 }

@@ -16,12 +16,12 @@ const Button = (props: IButtonProps) => {
 
   return (
     <div className={btnClass} onClick={props.handleClick}>
-      {props.children}
+      <p className="cursor-pointer"> {props.children}</p>
 
       <style jsx>
         {`
           .btn {
-            @apply inline-block rounded-md text-center;
+            @apply inline-block rounded-md text-center cursor-pointer;
           }
 
           .btn-base {
