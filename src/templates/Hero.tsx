@@ -28,7 +28,7 @@ const Hero = () => (
             </span>
           </>
         }
-        description="Join our waitlist to be notified when we go live!"
+        description="Join the rest of Salem Students to be notified when we go live!"
       />
     </Section>
   </Background>
