@@ -11,8 +11,15 @@ export default async function addToWaitList(
     await mongoose.connect(
       'mongodb+srv://admin:admin@uv-waitlist.nzdhukp.mongodb.net/uv-waitlist?retryWrites=true&w=majority'
     );
+
+    const currUser = await getUserModel().findOne({ email: req.body.email });
+
+    if (currUser) {
+      return res.status(400).send({ error: 'User already exists' });
+    }
+
     const user = await getUserModel().create({ email: req.body.email });
-    return res.send({ user });
+    return res.status(200).send({ user });
   } catch (err: any) {
     return res.send({ error: err.message });
   }

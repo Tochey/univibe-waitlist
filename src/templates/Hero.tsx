@@ -1,17 +1,17 @@
 import Link from 'next/link';
 
 import { Background } from '../background/Background';
-import { HeroOneButton } from '../hero/HeroOneButton';
+import HeroOneButton from '../hero/HeroOneButton';
 import { Section } from '../layout/Section';
 import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
 import { Logo } from './Logo';
 
-const Hero = () => (
+const Hero = ({ studentCount }: { studentCount: number }) => (
   <Background color="bg-gray-100">
     <Section yPadding="py-6">
       <NavbarTwoColumns logo={<Logo xl />}>
         <li>
-          <Link href="mailto:tochey@outlook.com">
+          <Link href="mailto:jserverex@gmail.com">
             <a>Contact</a>
           </Link>
         </li>
@@ -29,6 +29,7 @@ const Hero = () => (
           </>
         }
         description="Join the rest of Salem Students to be notified when we go live!"
+        studentCount={studentCount}
       />
     </Section>
   </Background>

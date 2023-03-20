@@ -7,8 +7,9 @@ export default async function getAll(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { email } = req.query;
-  console.log(email);
+  const { method } = req;
+  console.log(method);
+
   try {
     await mongoose.connect(
       'mongodb+srv://admin:admin@uv-waitlist.nzdhukp.mongodb.net/uv-waitlist?retryWrites=true&w=majority'

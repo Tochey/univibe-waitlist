@@ -3,13 +3,11 @@ import { AppConfig } from '../utils/AppConfig';
 import { Hero } from './Hero';
 import { VerticalFeatures } from './VerticalFeatures';
 
-const Base = () => (
+const Base = ({ studentCount }: { studentCount: number }) => (
   <div className="antialiased text-gray-600">
     <Meta title={AppConfig.title} description={AppConfig.description} />
-    <Hero />
-    <VerticalFeatures />
-    {/* <Banner />
-    <Footer /> */}
+    <Hero studentCount={studentCount} />
+    <VerticalFeatures studentCount={studentCount} />
   </div>
 );
 
