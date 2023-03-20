@@ -7,3 +7,6 @@ Content-Type: application/json
 {
   "email": "tochi@gmail.com"
 }
+
+###
+GET https://www.joinunivibe.com/api/getAllUsers

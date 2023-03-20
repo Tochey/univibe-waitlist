@@ -7,7 +7,7 @@ const Index = ({ studentCount }: { studentCount: number }) => (
 
 export default Index;
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const response = await api.get('/api/getAllUsers');
   return {
     props: {
