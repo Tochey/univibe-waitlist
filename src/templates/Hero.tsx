@@ -11,7 +11,7 @@ const Hero = ({ studentCount }: { studentCount: number }) => (
     <Section yPadding="py-6">
       <NavbarTwoColumns logo={<Logo xl />}>
         <li>
-          <Link href="mailto:jserverex@gmail.com">
+          <Link href="mailto:jseverex@gmail.com">
             <a>Contact</a>
           </Link>
         </li>
