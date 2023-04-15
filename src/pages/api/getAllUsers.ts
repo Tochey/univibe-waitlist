@@ -14,7 +14,7 @@ export default async function getAll(
     await mongoose.connect(
       'mongodb+srv://admin:admin@uv-waitlist.nzdhukp.mongodb.net/uv-waitlist?retryWrites=true&w=majority'
     );
-    const userCount = (await getUserModel().find({}).count()) + 30;
+    const userCount = await getUserModel().find({}).count();
     return res.send({ count: userCount });
   } catch (err: any) {
     return res.send({ error: err.message });
